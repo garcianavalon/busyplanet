@@ -10,7 +10,7 @@ class TripAdvisorSpider(CrawlSpider):
     name = "tripadvisor"
     allowed_domains = ["tripadvisor.com"]
     start_urls = [
-        "http://www.tripadvisor.com/ShowForum-g186338-i17-London_England.html"
+        "http://www.tripadvisor.com/ShowForum-g186338-i17-London_England.html",
     ]
 
     rules = (
@@ -27,9 +27,9 @@ class TripAdvisorSpider(CrawlSpider):
         sel.remove_namespaces()
         topic = sel.xpath("//div[@id='SHOW_TOPIC']")
         item = TripAdvisorForumPostItem()
-        item['text'] = topic.xpath("//div[@class='postBody']//p").extract() #topic.xpath("//p/text()").extract()
+        item['text'] = topic.xpath("//div[@class='postBody']").extract() #topic.xpath("//p/text()").extract()
         #item['date'] = topic.xpath("//div[@class='postDate']/text()").extract()
-        #item['link'] = response.url
+        item['link'] = response.url
         return item
 
 

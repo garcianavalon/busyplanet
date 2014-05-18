@@ -12,7 +12,10 @@ SPIDER_MODULES = ['BigDataTermProject.spiders']
 NEWSPIDER_MODULE = 'BigDataTermProject.spiders'
 
 ITEM_PIPELINES = {
-    'BigDataTermProject.pipelines.CleanHtmlPTagsPipeline': 400,
+    'BigDataTermProject.pipelines.RemoveDivTagsPipeline': 400,
+    'BigDataTermProject.pipelines.CleanHtmlPTagsPipeline': 430,
+    'BigDataTermProject.pipelines.RemoveLineBreaksPipeline': 440,
+    'BigDataTermProject.pipelines.RemoveEmptyStringsPipeline': 450,
     'BigDataTermProject.pipelines.StoringItemInMongoDBPipeline': 900,
 }
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
