@@ -11,3 +11,12 @@ class StoringItemInMongoDBPipeline(object):
         collection = db[spider.name] #each spider will store items in its own collection
         collection.insert(dict(item)) #insert in the db
         return item
+class CleanHtmlPTagsPipeline(object):
+    def process_item(self, item, spider):
+        #remove the tags
+        new_text = []
+        for string in item['text']: #TODO: join both in a regex
+            new_text.append(string.replace("<p>","").replace("</p>",""))
+        item['text'] = new_text
+        return item
+
