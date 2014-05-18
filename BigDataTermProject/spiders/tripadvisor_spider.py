@@ -9,9 +9,9 @@ class TripAdvisorSpider(CrawlSpider):
 #class TripAdvisorSpider(Spider):
     name = "tripadvisor"
     allowed_domains = ["tripadvisor.com"]
-    start_urls = [
-        "http://www.tripadvisor.com/ShowForum-g186338-i17-London_England.html",
-    ]
+    f = open("urls.txt")
+    start_urls = [url.strip() for url in f.readlines()]
+    f.close()
 
     rules = (
         #Extract links in the forum topics

@@ -20,3 +20,4 @@ ITEM_PIPELINES = {
 }
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'BigDataTermProject (+http://www.yourdomain.com)'
+
