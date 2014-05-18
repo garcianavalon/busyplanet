@@ -28,8 +28,8 @@ class TripAdvisorSpider(CrawlSpider):
         topic = sel.xpath("//div[@id='SHOW_TOPIC']")
         item = TripAdvisorForumPostItem()
         item['text'] = topic.xpath("//div[@class='postBody']//p").extract() #topic.xpath("//p/text()").extract()
-        item['date'] = topic.xpath("//div[@class='postDate']/text()").extract()
-        item['link'] = response.url
+        #item['date'] = topic.xpath("//div[@class='postDate']/text()").extract()
+        #item['link'] = response.url
         return item
 
 
