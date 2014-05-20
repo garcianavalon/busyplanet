@@ -8,7 +8,7 @@ class StoringItemInMongoDBPipeline(object):
     def process_item(self, item, spider):
         client = MongoClient()
         db = client['bigdata'] #get our database
-        collection = db[spider.name] #each spider will store items in its own collection
+        collection = db[spider.name + "v2"] #each spider will store items in its own collection
         collection.insert(dict(item)) #insert in the db
         return item
 class CleanHtmlPTagsPipeline(object):
