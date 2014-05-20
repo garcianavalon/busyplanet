@@ -1,0 +1,144 @@
+SAN FRANCISCO
+> db.tripadvisor_sanfrancisco.count()
+41731 -> number of threads/topics
+> db.word_count_sanfrancisco.count()
+417516 -> number of unique words
+
+> db.word_count_sanfrancisco.find().sort({value:-1})
+{ "_id" : "the", "value" : 1087401 }
+{ "_id" : "a", "value" : 784594 }
+{ "_id" : "to", "value" : 760477 }
+{ "_id" : "and", "value" : 547241 }
+{ "_id" : "in", "value" : 326071 }
+{ "_id" : "of", "value" : 323907 }
+{ "_id" : "you", "value" : 319416 }
+{ "_id" : "is", "value" : 292836 }
+{ "_id" : "for", "value" : 275097 }
+{ "_id" : "i", "value" : 264157 }
+{ "_id" : "target_blank", "value" : 259178 }
+{ "_id" : "we", "value" : 210656 }
+{ "_id" : "classinternal", "value" : 209139 }
+{ "_id" : "on", "value" : 206637 }
+{ "_id" : "auto", "value" : 203974 }
+{ "_id" : "pid3182", "value" : 203728 }
+{ "_id" : "that", "value" : 188977 }
+{ "_id" : "it", "value" : 182151 }
+{ "_id" : "are", "value" : 166291 }
+{ "_id" : "be", "value" : 166228 }
+
+> db.positive_words_sanfrancisco.find().sort({value:-1})
+{ "_id" : "like", "value" : 55948 }
+{ "_id" : "good", "value" : 53651 }
+{ "_id" : "right", "value" : 50266 }
+{ "_id" : "great", "value" : 39422 }
+{ "_id" : "best", "value" : 26268 }
+{ "_id" : "well", "value" : 24585 }
+{ "_id" : "nice", "value" : 21562 }
+{ "_id" : "better", "value" : 17527 }
+{ "_id" : "recommend", "value" : 13276 }
+{ "_id" : "pretty", "value" : 12059 }
+{ "_id" : "top", "value" : 11897 }
+{ "_id" : "free", "value" : 11359 }
+{ "_id" : "fun", "value" : 11075 }
+{ "_id" : "love", "value" : 10988 }
+{ "_id" : "enjoy", "value" : 9793 }
+{ "_id" : "worth", "value" : 9713 }
+{ "_id" : "easy", "value" : 8735 }
+{ "_id" : "enough", "value" : 8367 }
+{ "_id" : "fine", "value" : 7805 }
+{ "_id" : "golden", "value" : 7646 }
+
+> db.negative_words_sanfrancisco.find().sort({value:-1})
+{ "_id" : "expensive", "value" : 6730 }
+{ "_id" : "bad", "value" : 6006 }
+{ "_id" : "problem", "value" : 4217 }
+{ "_id" : "hard", "value" : 4101 }
+{ "_id" : "cheap", "value" : 3526 }
+{ "_id" : "crowded", "value" : 3503 }
+{ "_id" : "cold", "value" : 3464 }
+{ "_id" : "miss", "value" : 3396 }
+{ "_id" : "sorry", "value" : 3062 }
+{ "_id" : "wrong", "value" : 2740 }
+{ "_id" : "limited", "value" : 2618 }
+{ "_id" : "issue", "value" : 2420 }
+{ "_id" : "dim", "value" : 2339 }
+{ "_id" : "difficult", "value" : 2276 }
+{ "_id" : "worry", "value" : 1979 }
+{ "_id" : "death", "value" : 1950 }
+{ "_id" : "steep", "value" : 1754 }
+{ "_id" : "unfortunately", "value" : 1599 }
+{ "_id" : "break", "value" : 1590 }
+{ "_id" : "dark", "value" : 1563 }
+
+-----------------------------------------------------------
+LONDON
+> db.tripadvisor_london.count()
+93447 -> number of threads
+> db.word_count_london.count()
+795373 -> number of unique words
+
+> db.word_count_london.find({value:{$gt:1000}}).sort({value:-1})
+{ "_id" : "the", "value" : 2170444 }
+{ "_id" : "to", "value" : 1618457 }
+{ "_id" : "a", "value" : 1381888 }
+{ "_id" : "and", "value" : 1063944 }
+{ "_id" : "you", "value" : 663326 }
+{ "_id" : "of", "value" : 657656 }
+{ "_id" : "for", "value" : 642371 }
+{ "_id" : "in", "value" : 638941 }
+{ "_id" : "i", "value" : 616926 }
+{ "_id" : "is", "value" : 549729 }
+{ "_id" : "on", "value" : 427647 }
+{ "_id" : "that", "value" : 407274 }
+{ "_id" : "be", "value" : 384815 }
+{ "_id" : "at", "value" : 373636 }
+{ "_id" : "we", "value" : 372167 }
+{ "_id" : "it", "value" : 366177 }
+{ "_id" : "from", "value" : 358250 }
+{ "_id" : "are", "value" : 335452 }
+{ "_id" : "have", "value" : 303890 }
+{ "_id" : "this", "value" : 291040 }
+
+> db.positive_words_london.find().sort({value:-1})
+{ "_id" : "like", "value" : 97524 }
+{ "_id" : "good", "value" : 96060 }
+{ "_id" : "right", "value" : 95657 }
+{ "_id" : "well", "value" : 55142 }
+{ "_id" : "great", "value" : 49784 }
+{ "_id" : "best", "value" : 46409 }
+{ "_id" : "better", "value" : 34261 }
+{ "_id" : "nice", "value" : 32626 }
+{ "_id" : "worth", "value" : 26224 }
+{ "_id" : "free", "value" : 25930 }
+{ "_id" : "easy", "value" : 20515 }
+{ "_id" : "work", "value" : 18119 }
+{ "_id" : "recommend", "value" : 17743 }
+{ "_id" : "enough", "value" : 17360 }
+{ "_id" : "cheaper", "value" : 16687 }
+{ "_id" : "love", "value" : 16465 }
+{ "_id" : "thank", "value" : 16261 }
+{ "_id" : "available", "value" : 15604 }
+{ "_id" : "pretty", "value" : 15446 }
+{ "_id" : "top", "value" : 13862 }
+
+> db.negative_words_london.find().sort({value:-1})
+{ "_id" : "rail", "value" : 26971 }
+{ "_id" : "expensive", "value" : 17276 }
+{ "_id" : "cheap", "value" : 13450 }
+{ "_id" : "problem", "value" : 11403 }
+{ "_id" : "bad", "value" : 10580 }
+{ "_id" : "miss", "value" : 7049 }
+{ "_id" : "sorry", "value" : 6877 }
+{ "_id" : "hard", "value" : 6780 }
+{ "_id" : "wrong", "value" : 6749 }
+{ "_id" : "difficult", "value" : 5279 }
+{ "_id" : "problems", "value" : 5124 }
+{ "_id" : "worry", "value" : 4608 }
+{ "_id" : "crowded", "value" : 4592 }
+{ "_id" : "cold", "value" : 4554 }
+{ "_id" : "limited", "value" : 4526 }
+{ "_id" : "issue", "value" : 4193 }
+{ "_id" : "doubt", "value" : 3656 }
+{ "_id" : "suspect", "value" : 3526 }
+{ "_id" : "inappropriate", "value" : 3343 }
+{ "_id" : "confused", "value" : 3309 }

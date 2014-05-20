@@ -1,17 +1,20 @@
-f = open('positivewords.txt','r')
+f = open('negativewords.txt','r')
 lines = [url.strip() for url in f.readlines()]
-print lines
 f.close()
 
 from pymongo import MongoClient
 client = MongoClient()
 db = client['bigdata']
 
-cities = ['sanfrancisco']
+cities = ['sanfrancisco','london']
 for city in cities:
+    print 'Starting with: '+city
     all_words = db['word_count_'+city]
-    positive_words = db['positive_words_'+city]
+    negative_words = db['negative_words_'+city]
+    #clean start
+    negative_words.remove()
     for word in lines:
         item = all_words.find_one({'_id':word})
         if item:
-            positive_words.insert(item)
+            negative_words.insert(item)
+    print 'Finished with: '+city
