@@ -55,3 +55,6 @@ docs/_build/
 # Database exports
 exports/
 
+# Crawler logs
+log.txt
+
