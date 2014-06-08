@@ -35,7 +35,6 @@ def saveToFile(output,filename):
     f = open(filename,'w')
     f.truncate()
     for sentence in output:
-        print sentence
         f.write(sentence.encode('utf8')+"\n")
     f.close()
 
