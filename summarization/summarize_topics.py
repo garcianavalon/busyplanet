@@ -7,7 +7,7 @@ NUMBER_OF_WORDS = 5
 #City
 CITY = 'sanfrancisco'
 #TOPIC
-TOPIC = 'beach'
+TOPIC = 'art'
 #threads
 NUMBER_OF_THREADS = 10000
 
@@ -38,6 +38,7 @@ def saveToFile(output,filename):
         f.write(sentence.encode('utf8')+"\n")
     f.close()
 
+print "summarizing "+CITY +" for "+TOPIC
 client = MongoClient()
 db = client['bigdata']
 ss = summarize.SimpleSummarizer()

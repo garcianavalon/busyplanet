@@ -23,6 +23,7 @@ class TripAdvisorForumPostItem(Item):
 class TripAdvisorAttractionReviewItem(Item):
     text = Field()
     score = Field()
+    max_score = Field()
 
 class DummyItem(Item):
     dummy_field = Field()

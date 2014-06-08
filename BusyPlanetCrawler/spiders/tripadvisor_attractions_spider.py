@@ -2,7 +2,7 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from scrapy.spider import Spider
-
+import re
 from BusyPlanetCrawler.items import TripAdvisorAttractionReviewItem
 
 class TripAdvisorAttractionsSpider(CrawlSpider):
@@ -29,7 +29,15 @@ class TripAdvisorAttractionsSpider(CrawlSpider):
         for review in reviews:
             item = TripAdvisorAttractionReviewItem()
             item['text'] = review.xpath("div[@class='review basic_review inlineReviewUpdate provider0 newFlag']/div[@class='col2of2']/div[@class='innerBubble']/div[@class='wrap']/div[@class='entry']/p/text()").extract()
-            item['score'] = review.xpath("div[@class='review basic_review inlineReviewUpdate provider0 newFlag']/div[@class='col2of2']/div[@class='innerBubble']/div[@class='wrap']/div[@class='rating reviewItemInline']/span/img/@alt").extract()
-            #if item['text'] and item['score']:
+            if not item['text']:
+                continue
+            score = review.xpath("div[@class='review basic_review inlineReviewUpdate provider0 newFlag']/div[@class='col2of2']/div[@class='innerBubble']/div[@class='wrap']/div[@class='rating reviewItemInline']/span/img/@alt").extract()
+
+            if score:
+                regex = re.compile("(\d)")
+                r = regex.findall(str(score))#IE: 4 of 5 stars
+                item['score'] = float(r[0])#then 4
+                item['max_score'] = float(r[1])#then 5
+
             items.append(item)
         return items

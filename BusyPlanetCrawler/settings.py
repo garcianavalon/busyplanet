@@ -17,7 +17,7 @@ ITEM_PIPELINES = {
     'BusyPlanetCrawler.pipelines.RemoveLinksPipeline': 435,
     'BusyPlanetCrawler.pipelines.RemoveLineBreaksPipeline': 440,
     'BusyPlanetCrawler.pipelines.RemoveEmptyStringsPipeline': 450,
-   # 'BusyPlanetCrawler.pipelines.StoringItemInMongoDBPipeline': 900,
+    'BusyPlanetCrawler.pipelines.StoringItemInMongoDBPipeline': 900,
 }
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'BusyPlanetCrawler (+http://www.yourdomain.com)'
