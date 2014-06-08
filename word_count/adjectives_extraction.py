@@ -9,7 +9,7 @@ db = client['bigdata']
 def extractWords(index, list):
     words = []
     for i in [index-2,index-1,index,index+1,index+2]:
-        if i>0 and i<list.count-1:
+        if i>0 and i<len(list):
             words.append(list[i])
     return words
 
