@@ -1,4 +1,4 @@
-f = open("forum_urls.txt", 'w')
+f = open("urls.txt", 'w')
 f.truncate()
 base_url = "http://www.tripadvisor.com/ShowForum-g187147-i14-Paris_Ile_de_France.html\n"
 f.write(base_url)

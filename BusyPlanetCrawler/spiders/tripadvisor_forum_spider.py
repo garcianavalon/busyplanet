@@ -5,9 +5,9 @@ from scrapy.spider import Spider
 
 from BusyPlanetCrawler.items import TripAdvisorForumTopicItem,TripAdvisorForumPostItem
 
-class TripAdvisorSpider(CrawlSpider):
+class TripAdvisorForumSpider(CrawlSpider):
 #class TripAdvisorSpider(Spider):
-    name = "tripadvisor"
+    name = "tripadvisor_forum"
     allowed_domains = ["tripadvisor.com"]
     f = open("urls.txt")
     start_urls = [url.strip() for url in f.readlines()]
