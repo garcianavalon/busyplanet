@@ -20,6 +20,9 @@ class TripAdvisorForumPostItem(Item):
     date = Field()
     #destination_mentioned = Field()
     link = Field()
+class TripAdvisorAttractionReviewItem(Item):
+    text = Field()
+    score = Field()
 
 class DummyItem(Item):
     dummy_field = Field()

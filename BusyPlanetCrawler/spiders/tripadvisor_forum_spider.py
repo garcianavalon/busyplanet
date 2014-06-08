@@ -9,10 +9,10 @@ class TripAdvisorForumSpider(CrawlSpider):
 #class TripAdvisorSpider(Spider):
     name = "tripadvisor_forum"
     allowed_domains = ["tripadvisor.com"]
-    f = open("urls.txt")
+    f = open("urls/forum_urls.txt")
     start_urls = [url.strip() for url in f.readlines()]
     f.close()
-
+    collection_name ="forum"
     rules = (
         #Extract links in the forum topics
         #All forum topic links start with /ShowTopic-
@@ -31,17 +31,3 @@ class TripAdvisorForumSpider(CrawlSpider):
         #item['date'] = topic.xpath("//div[@class='postDate']/text()").extract()
         item['link'] = response.url
         return item
-
-
-
-    '''def parse(self, response):
-        sel = Selector(response)
-        forum = sel.xpath("//table[@id='SHOW_FORUMS_TABLE']/tr")
-        items = []
-        for topic in forum:
-            item = TripAdvisorForumTopicItem()
-            item['title'] = topic.xpath('td/b/a/text()').extract()
-            item['link'] = topic.xpath('td/b/a/@href').extract()
-            item['replies'] = topic.xpath("td[@class='reply rowentry ']/text()").extract()
-            items.append(item)
-        return items'''
