@@ -46,7 +46,9 @@ topic_words = getWordsByTopics(TOPIC+'_words.txt')
 # GET FROM DB THE MOST USED ONES
 important_words = selectMostUsedWords(db,CITY,topic_words,NUMBER_OF_WORDS)
 print important_words
+print "fetching input topics..."
 input = getTopics(db,CITY)
+print "Done, starting summarization..."
 output = ss.get_summarized(input, NUMBER_OF_WORDS,important_words)
 saveToFile(output,CITY+"_"+TOPIC+".txt")
 print "SAVED TO FILE"
