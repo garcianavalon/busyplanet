@@ -1,7 +1,7 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
 
-from BigDataTermProject.items import DmozItem
+from BusyPlanetCrawler.items import DmozItem
 
 class DmozSpider(Spider):
     name = "dmoz"

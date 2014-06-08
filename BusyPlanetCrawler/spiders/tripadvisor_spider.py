@@ -3,7 +3,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from scrapy.spider import Spider
 
-from BigDataTermProject.items import TripAdvisorForumTopicItem,TripAdvisorForumPostItem
+from BusyPlanetCrawler.items import TripAdvisorForumTopicItem,TripAdvisorForumPostItem
 
 class TripAdvisorSpider(CrawlSpider):
 #class TripAdvisorSpider(Spider):
