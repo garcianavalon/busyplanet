@@ -26,20 +26,20 @@ class SimpleSummarizer:
 		# break the input up into sentences.  working_sentences is used
 		# for the analysis, but actual_sentences is used in the results
 		# so capitalization will be correct.
-		print "LOADING sent_detector"
+		#print "LOADING sent_detector"
 		sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
-		print "TOKENIZING"
+		#print "TOKENIZING"
 		actual_sentences = sent_detector.tokenize(input)
-		print "BUILDING working_sentences"
+		#print "BUILDING working_sentences"
 		working_sentences = [sentence.lower()
 			for sentence in actual_sentences]
 
 		# iterate over the most frequent words, and add the first sentence
 		# that inclues each word to the result.
 		output_sentences = []
-		print "STARTING SEARCH"
+		#print "STARTING SEARCH"
 		for word in important_words:
-			print "searching for "+word
+			#print "searching for "+word
 			for i in range(0, len(working_sentences)):
 				if (word in working_sentences[i]
 				  and actual_sentences[i] not in output_sentences):
