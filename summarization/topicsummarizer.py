@@ -5,9 +5,9 @@ from pymongo import MongoClient
 #Number of words
 NUMBER_OF_WORDS = 10
 #City
-CITY = 'sanfrancisco'
+CITY = 'paris'
 #TOPIC
-TOPIC = 'restaurant'
+TOPIC = 'art'
 #threads
 NUMBER_OF_THREADS = 50000
 
